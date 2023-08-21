@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="">
+<html lang="en" class="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,20 +11,44 @@
     <link rel="stylesheet" href="./style.css">
     <script type="module" src="./src/main.js" defer></script>
 </head>
-<body>
+<body class="rain-theme">
     <div id="app">
-        <button id="toggle-mode">
-            <span class="sr-only">Ativar light mode</span>
-            <i class="ph-bold ph-sun"></i>
-            <i class="ph-bold ph-moon"></i>
-        </button>
-        <section id="timer" class="flex">
-            <span id="minutes">25</span>
-            <span>:</span>
-            <span id="seconds">00</span>
-        </section>
-
-        <section id="controls" class="flex">
+        <div class="themes rain-text">
+            <button id="fire" class="theme">
+            <span class="sr-only">Ativar fire mode</span>
+            <i class="ph-light ph-fire-simple"></i>
+            <i class="ph-fill ph-fire-simple"></i>
+            </button>
+            <button id="forest" class="theme">
+            <span class="sr-only">Ativar forest mode</span>
+            <i class="ph-light ph-leaf"></i>
+            <i class="ph-fill ph-leaf"></i>
+            </button>
+            <button id="bar" class="theme">
+            <span class="sr-only">Ativar bar mode</span>
+            <i class="ph-light ph-coffee"></i>
+            <i class="ph-fill ph-coffee"></i>
+            </button>
+            <button id="rain" class="theme rain">
+            <span class="sr-only">Ativar rain mode</span>
+            <i class="ph-light ph-cloud-rain"></i>
+            <i class="ph-fill ph-cloud-rain"></i>
+            </button>
+            <button id="toggle-mode">
+                <span class="sr-only">Ativar light mode</span>
+                <i class="ph-bold ph-sun"></i>
+                <i class="ph-bold ph-moon"></i>
+            </button>
+    </div>
+        <section id="controls">
+            <section id="timer" class="flex">
+                <span data-action="set" id="minutes">25</span>
+                <span class="sr-only">Ajustar contador</span>
+                <span data-action="set">:</span>
+                <span data-action="setSec" id="seconds">00</span>
+            </section>
+            
+            <section id="controls" class="flex control rain-bg">
             <button 
             data-action="toggleRunning"
             class="ph ph-play-circle">
@@ -36,13 +60,8 @@
                 <span class="sr-only">Pausar contador</span>
             </button>
             <button
-            data-action="set"
-             class="ph ph-timer secondary">
-                <span class="sr-only">Ajustar contador</span>
-            </button>
-            <button
             data-action="reset"
-             class="ph ph-stop-circle secondary">
+             class="ph ph-stop-circle">
                 <span class="sr-only">Reiniciar contador</span>
             </button>
             <button
@@ -55,6 +74,7 @@
              class="ph ph-speaker-high">
                 <span class="sr-only">Parar música</span>
             </button>
+        </section>
         </section>
 
     </div>

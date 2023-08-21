@@ -1,0 +1,13 @@
+#fire:not(.fire) .ph-fill, 
+#forest:not(.forest) .ph-fill, 
+#bar:not(.bar) .ph-fill, 
+#rain:not(.rain) .ph-fill {
+    display: none;
+}
+
+.fire .ph-light,
+.forest .ph-light,
+.bar .ph-light,
+.rain .ph-light {
+    display: none;
+}

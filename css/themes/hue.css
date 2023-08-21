@@ -1,0 +1,27 @@
+.fire,
+.fire-bg,
+.fire-text,
+.fire-theme {
+    --hue: 0;
+}
+
+.forest,
+.forest-bg,
+.forest-text,
+.forest-theme {
+    --hue: 150;
+}
+
+.bar,
+.bar-bg,
+.bar-text,
+.bar-theme {
+    --hue: 300;
+}
+
+.rain,
+.rain-bg,
+.rain-text,
+.rain-theme {
+    --hue: 190;
+}

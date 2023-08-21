@@ -1,0 +1,35 @@
+.fire,
+.fire-bg,
+
+.forest,
+.forest-bg,
+
+.bar,
+.bar-bg,
+
+.rain,
+.rain-bg
+
+html.light #timer,
+html.light #controls,
+
+html:not(.light) #timer,
+html:not(.light) #controls {
+    --opacity: 1;
+}
+
+.fire-theme,
+.fire-text,
+
+.forest-theme,
+.forest-text,
+
+.bar-theme,
+.bar-tex,
+
+.rain-theme,
+.rain-text,
+.secondary
+ {
+    --opacity: .5;
+}
