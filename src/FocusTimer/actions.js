@@ -32,16 +32,45 @@ export function setSec() {
 }
 
 export function toggleMusic() {
-    state.isMute = document.documentElement.classList.toggle('music-on')
 
-    if (state.isMute || document.documentElement.classList.contains('fire-theme')) {
-        sounds.Lareira.play();
-    } else if (state.isMute || document.documentElement.classList.contains('forest-theme')) {
-        sounds.Floresta.play();
-    } else if (state.isMute || document.documentElement.classList.contains('bar-theme')) {
-        sounds.Cafeteria.play();
-    } else if (state.isMute || document.documentElement.classList.contains('rain-theme')) {
+    const isMusicOn = document.documentElement.classList.toggle('music-on');
+
+    const themes = [
+        'fire-theme',
+        'rain-theme',
+        'bar-theme',
+        'forest-theme'];
+
+    const soundsByTheme = {
+        'fire-theme': 'Lareira',
+        'rain-theme': 'Chuva',
+        'bar-theme': 'Cafeteria',
+        'forest-theme': 'Floresta'
+    };
+
+    if (isMusicOn) {
+        themes.forEach(theme => {
+            const sound = soundsByTheme[theme];
+            const shouldPlay = document.body.classList.contains(theme);
+
+            if (sound) {
+                if (shouldPlay) {
+                    sounds[sound].play();
+                } else {
+                    sounds[sound].pause();
+                }
+            }
+        });
     } else {
-        sounds.Lareira.pause();
+        Object.values(sounds).forEach(sound => sound.pause());
     }
 }
+
+const bodyObserver = new MutationObserver(() => {
+});
+
+bodyObserver.observe(document.body, {
+    attributes: true,
+    childList: true,
+    subtree: true
+});
