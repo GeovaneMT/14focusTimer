@@ -34,11 +34,14 @@ export function setSec() {
 export function toggleMusic() {
     state.isMute = document.documentElement.classList.toggle('music-on')
 
-    if(state.isMute) {
-        sounds.bgAudio.play()
-        return
+    if (state.isMute || document.documentElement.classList.contains('fire-theme')) {
+        sounds.Lareira.play();
+    } else if (state.isMute || document.documentElement.classList.contains('forest-theme')) {
+        sounds.Floresta.play();
+    } else if (state.isMute || document.documentElement.classList.contains('bar-theme')) {
+        sounds.Cafeteria.play();
+    } else if (state.isMute || document.documentElement.classList.contains('rain-theme')) {
+    } else {
+        sounds.Lareira.pause();
     }
-
-    sounds.bgAudio.pause()
-    
 }
