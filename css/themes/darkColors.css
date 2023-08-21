@@ -1,0 +1,42 @@
+html:not(.light) .fire-bg,
+html:not(.light) .forest-bg,
+html:not(.light) .bar-bg,
+html:not(.light) .rain-bg,
+
+html:not(.light) .fire,
+html:not(.light) .forest,
+html:not(.light) .bar,
+html:not(.light) .rain,
+
+html:not(.light) .fire-theme,
+html:not(.light) .forest-theme,
+html:not(.light) .bar-theme,
+html:not(.light) .rain-theme,
+
+html:not(.light) #minutes:focus,
+html:not(.light) #seconds:focus {
+  --bg-color: hsla(var(--hue), 100%, 20%, var(--opacity));
+    background: var(--bg-color);
+}
+
+html:not(.light) .fire-text,
+html:not(.light) .forest-text,
+html:not(.light) .bar-text,
+html:not(.light) .rain-text,
+
+html:not(.light) .ph-moon,
+
+html:not(.light) #controls,
+html:not(.light) #timer {
+  --color: hsla(var(--hue), 100%, 90%, var(--opacity));
+    color: var(--color);
+}
+
+html:not(.light) .fire-theme .fire,
+html:not(.light) .rain-theme .rain,
+html:not(.light) .bar-theme .bar,
+html:not(.light) .forest-theme .forest,
+html:not(.light) .secondary {
+  --color: hsla(var(--hue), 100%, 50%, var(--opacity));
+    color: var(--color);
+}

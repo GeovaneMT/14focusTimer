@@ -8,8 +8,6 @@ export function toggleRunning() {
 
     timer.countdown()
     sounds.buttonPressAudio.play()
-
-
 }
 
 export function reset() {
@@ -22,10 +20,15 @@ export function reset() {
 }
 
 export function set() {
-    el.minutes.setAttribute('contenteditable', true)
-    el.minutes.focus()
+    state.isRunning = document.documentElement.classList.remove('running')
+    el.minutes.setAttribute('contenteditable', true);
+    el.minutes.focus();
+}
 
-    
+export function setSec() {
+    state.isRunning = document.documentElement.classList.remove('running')
+    el.seconds.setAttribute('contenteditable', true);
+    el.seconds.focus();
 }
 
 export function toggleMusic() {
