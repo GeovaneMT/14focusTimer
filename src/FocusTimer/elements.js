@@ -1,3 +1,5 @@
 export const controls = document.getElementById('controls')
 export const minutes = document.getElementById('minutes')
 export const seconds = document.getElementById('seconds')
+export const buttonaddMinutes = document.getElementById('addMinutes')
+export const buttonDecreaseMinutes = document.getElementById('decreaseMinutes')

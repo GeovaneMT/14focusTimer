@@ -1,3 +1,5 @@
+import * as el from './elements.js'
+
 export function setTime(inputElement, timeType, nextInputElement = null) {
 
   inputElement.addEventListener('blur', () => {
@@ -19,4 +21,22 @@ export function setTime(inputElement, timeType, nextInputElement = null) {
       inputElement.textContent = '00'
     }
   })
+
+  el.buttonaddMinutes.addEventListener('click', function () {
+    el.minutes.textContent = Number(el.minutes.textContent) + 2.5
+    if (Number(el.minutes.textContent) >= 60) {
+      el.minutes.textContent = '60';
+      el.seconds.textContent = '00';
+    }
+  })
+  
+  el.buttonDecreaseMinutes.addEventListener('click', function () {
+    if (Number(el.minutes.textContent) >= 5) {
+      el.minutes.textContent = Number(el.minutes.textContent) - 2.5;
+    } else {
+      el.minutes.textContent = '00';
+      el.seconds.textContent = '00';
+    }
+  })
+
 }

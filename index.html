@@ -41,7 +41,8 @@
             </button>
     </div>
         <section id="controls">
-            <section id="timer" class="flex">
+
+            <section id="timer" class="flex watch">
                 <span data-action="set" id="minutes">25</span>
                 <span class="sr-only">Ajustar contador</span>
                 <span data-action="set">:</span>
@@ -63,6 +64,18 @@
             data-action="reset"
              class="ph ph-stop-circle">
                 <span class="sr-only">Reiniciar contador</span>
+            </button>
+            <button
+            data-action="addMinutes"
+             class="ph ph-plus-circle"
+             id="addMinutes">
+                <span class="sr-only">Parar música</span>
+            </button>
+            <button
+            data-action="decreaseMinutes"
+             class="ph ph-minus-circle"
+             id="decreaseMinutes">
+                <span class="sr-only">Parar música</span>
             </button>
             <button
             data-action="toggleMusic"
