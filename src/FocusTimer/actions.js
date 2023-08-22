@@ -32,14 +32,14 @@ export function setSec() {
 }
 
 export function toggleMusic() {
-
     const isMusicOn = document.documentElement.classList.toggle('music-on');
 
     const themes = [
         'fire-theme',
         'rain-theme',
         'bar-theme',
-        'forest-theme'];
+        'forest-theme'
+    ];
 
     const soundsByTheme = {
         'fire-theme': 'Lareira',
@@ -66,11 +66,21 @@ export function toggleMusic() {
     }
 }
 
-const bodyObserver = new MutationObserver(() => {
+const bodyObserver = new MutationObserver(mutations => {
+    mutations.forEach(mutation => {
+        if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+            document.documentElement.classList.remove('music-on');
+            sounds.Floresta.pause();
+            sounds.Lareira.pause();
+            sounds.Chuva.pause();
+            sounds.Cafeteria.pause();
+        }
+    });
 });
 
 bodyObserver.observe(document.body, {
     attributes: true,
+    attributeFilter: ['class'],
     childList: true,
     subtree: true
 });
