@@ -17,14 +17,12 @@
     font-size: 9.6rem;
     font-weight: bold;
     justify-content: center;
-    justify-content: space-around;
     align-items: center;
 }
 
 #controls {
-    margin-top: 1.6rem;
+    margin-top: 4rem;
     padding: 2.2rem 4rem;
-    gap: 1.6rem;
     border-radius: 999rem;
 }
 
